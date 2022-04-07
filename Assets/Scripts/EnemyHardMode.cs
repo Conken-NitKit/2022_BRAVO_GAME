@@ -8,6 +8,9 @@ namespace EnemyMove
 {
     public class EnemyHardMode : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject firstStageBullet;
+
         private void Start()
         {
             MoveFirstStage();
@@ -15,11 +18,14 @@ namespace EnemyMove
 
         public async void MoveFirstStage()
         {
-            while (true)
+            for(int i = 0; i < 60; i++)
             {
-                this.transform.DOMove(new Vector3(Random.Range(-4f , 4f), Random.Range(-5f, 5f), 0f), 1f);
+                this.transform.DOMove(new Vector3(Random.Range(-4f , 4f), Random.Range(-5f, 5f), 0f), 0.5f);
+                this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 0.5f, RotateMode.FastBeyond360);
 
-                await Task.Delay(1000);
+                Instantiate(firstStageBullet, this.gameObject.transform.position, Quaternion.identity);
+
+                await Task.Delay(500);
             }
         }
     }

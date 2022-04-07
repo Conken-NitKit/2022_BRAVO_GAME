@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1357993158118568843}
   - component: {fileID: 599121606272107793}
   - component: {fileID: 7056789051541383901}
-  - component: {fileID: -3386981700619787859}
+  - component: {fileID: -415290091062929509}
+  - component: {fileID: -850903150381749640}
   m_Layer: 0
-  m_Name: EnemyBullet
+  m_Name: EnemyHardFirstStageBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,13 +117,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-3386981700619787859
+--- !u!114 &-415290091062929509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,3 +135,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b340f7f49aad4e16a3462eb5843b1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-850903150381749640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947127159704357093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d35857ea2d024cad86cd54db9dcc0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 7056789051541383901}
