@@ -6,7 +6,7 @@ using DG.Tweening;
 /// <summary>
 /// 敵の動きの名前空間
 /// </summary>
-namespace EnemyMoveEasy
+namespace EnemyMove
 {
     /// <summary>
     /// 簡単モードの敵のクラス
