@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirstStageBullet : MonoBehaviour
+/// <summary>
+/// 難しいモードの敵の最初の弾の動き
+/// </summary>
+public class EnemyHardFirstStageBullet : MonoBehaviour
 {
     private float forceFirstMove = 3f;
 

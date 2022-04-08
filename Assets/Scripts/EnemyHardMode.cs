@@ -5,7 +5,7 @@ using DG.Tweening;
 using System.Threading.Tasks;
 
 /// <summary>
-/// 敵の動きをの名前空間
+/// 敵の動きの名前空間
 /// </summary>
 namespace EnemyMove
 {
@@ -20,14 +20,14 @@ namespace EnemyMove
         private const float MinPositionX = -4f;
         private const float MaxPositionX = 4f;
 
-        private const float MinPositionY = -5f;
+        private const float MinPositionY = -4f;
         private const float MaxPositionY = 5f;
 
         private float enemyMoveTime = 0.5f;
 
         private void Start()
         {
-            MoveFirstStage();
+            
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace EnemyMove
             }
         }
 
-        public async void MoveSecondStage()
+        public void MoveSecondStage()
         {
 
         }
