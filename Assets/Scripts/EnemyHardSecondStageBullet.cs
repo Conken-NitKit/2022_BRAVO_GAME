@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// 簡単モードの敵の最初の弾の動き
 /// </summary>
 public class EnemyHardSecondStageBullet : MonoBehaviour
 {

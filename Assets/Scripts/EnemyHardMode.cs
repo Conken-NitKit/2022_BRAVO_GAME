@@ -5,7 +5,7 @@ using DG.Tweening;
 using System.Threading.Tasks;
 
 /// <summary>
-/// 敵の動きをの名前空間
+/// 敵の動きの名前空間
 /// </summary>
 namespace EnemyMove
 {

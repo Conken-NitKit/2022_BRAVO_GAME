@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///
+/// 難しいモードの敵の最初の弾の動き
 /// </summary>
-public class EnemyHaedFirstStageBullet : MonoBehaviour
+public class EnemyHardFirstStageBullet : MonoBehaviour
 {
     private float forceFirstMove = 3f;
 
