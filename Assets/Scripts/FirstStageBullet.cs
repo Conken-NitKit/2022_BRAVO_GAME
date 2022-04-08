@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class FirstStageBullet : MonoBehaviour
 {
     private float forceFirstMove = 3f;
