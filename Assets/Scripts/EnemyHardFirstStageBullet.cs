@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+///
 /// </summary>
-public class FirstStageBullet : MonoBehaviour
+public class EnemyHaedFirstStageBullet : MonoBehaviour
 {
     private float forceFirstMove = 3f;
 

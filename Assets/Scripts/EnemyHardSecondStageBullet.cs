@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public class SecondStageBullet : MonoBehaviour
+public class EnemyHardSecondStageBullet : MonoBehaviour
 {
     private int horizontalDirection;
 
