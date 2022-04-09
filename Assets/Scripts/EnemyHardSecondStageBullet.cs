@@ -17,9 +17,10 @@ public class EnemyHardSecondStageBullet : MonoBehaviour
         transform.DOPath(
             path: new Vector3[]
             {
-                new Vector3(1 * horizontalDirection, 0.5f, 0),
-                new Vector3(2f * horizontalDirection, 0.5f * -1, 0),
-                new Vector3(3 * horizontalDirection, 0, 0)
+                new Vector3(1f * horizontalDirection, 0.5f, 0),
+                new Vector3(2f * horizontalDirection, 0, 0),
+                new Vector3(3f * horizontalDirection, 0.5f * -1, 0),
+                new Vector3(4f * horizontalDirection, 0, 0)
             },
             duration: 3f,
             pathType: PathType.CatmullRom
