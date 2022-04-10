@@ -15,7 +15,7 @@ public class TitleButton : MonoBehaviour
     public enum SCENES
     {
         Easy,
-        Nomal,
+        Normal,
         Hard,
     }
     /// <summary>
