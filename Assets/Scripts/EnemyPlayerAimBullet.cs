@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+///  自機狙いの敵の弾のクラス
+/// </summary>
 public class EnemyPlayerAimBullet : MonoBehaviour
 {
     void Start()

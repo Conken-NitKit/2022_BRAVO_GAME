@@ -40,7 +40,7 @@ namespace EnemyMove
         }
 
         /// <summary>
-        /// ファーストステージの動き
+        /// 第一ステージの動き
         /// </summary>
         public void MoveFirstStage()
         {
@@ -53,7 +53,7 @@ namespace EnemyMove
         }
 
         /// <summary>
-        /// 
+        /// 第二ステージの動き
         /// </summary>
         public void MoveSecondStage()
         {
