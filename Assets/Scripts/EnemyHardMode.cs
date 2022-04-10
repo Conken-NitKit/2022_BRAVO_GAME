@@ -15,6 +15,9 @@ namespace EnemyMove
     public class EnemyHardMode : MonoBehaviour
     {
         [SerializeField]
+        private GameObject enemyPlayerAimBullet;
+
+        [SerializeField]
         private GameObject firstStageBullet;
 
         [SerializeField]
@@ -37,7 +40,7 @@ namespace EnemyMove
         }
 
         /// <summary>
-        /// ファーストステージの動き
+        /// 第一ステージの動き
         /// </summary>
         public void MoveFirstStage()
         {
@@ -45,18 +48,19 @@ namespace EnemyMove
             {
                 this.transform.DOMove(new Vector3(Random.Range(MinPositionX, MaxPositionX), Random.Range(MinPositionY, MaxPositionY), 0f), enemyMoveTime);
                 Instantiate(firstStageBullet, this.gameObject.transform.position, Quaternion.identity);
-
             })
             .SetLoops(-1, LoopType.Restart);
         }
 
         /// <summary>
-        /// 
+        /// 第二ステージの動き
         /// </summary>
         public void MoveSecondStage()
         {
-            this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 1, RotateMode.FastBeyond360).OnStepComplete(() =>
+            this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 1f, RotateMode.FastBeyond360).OnStepComplete(() =>
             {
+                Instantiate(enemyPlayerAimBullet, this.gameObject.transform.position, Quaternion.identity);
+
                 foreach (Transform secondStageBulletSpawnPosition in secondStageBulletSpawnPositions)
                 {
                     Instantiate(secondStageBullet, secondStageBulletSpawnPosition.position, Quaternion.identity);
