@@ -14,7 +14,9 @@ public class TitleButton : MonoBehaviour
     [SerializeField] private SCENES scene; //ボタンを押したときシーンを遷移する
     public enum SCENES
     {
-        Easy,Nomal,Hard
+        Easy,
+        Nomal,
+        Hard,
     }
     /// <summary>
     /// ボタンがクリックされたときボタンが一瞬拡大する
