@@ -10,13 +10,22 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class TitleButton : MonoBehaviour
 {
+
+    [SerializeField] private SCENES scene; //ボタンを押したときシーンを遷移する
+    public enum SCENES
+    {
+        Easy,
+        Normal,
+        Hard,
+    }
     /// <summary>
     /// ボタンがクリックされたときボタンが一瞬拡大する
     /// </summary>
     public void OnClicked()
     {
         Sequence sequence = DOTween.Sequence();
-        transform.DOScale(1.1f,0.5f).SetEase(Ease.OutElastic).OnComplete(() => transform.DOScale(1f,0.5f)).OnComplete(() => SceneManager.LoadScene(""));    
+        transform.DOScale(1.1f,0.5f).SetEase(Ease.OutElastic)
+        .OnComplete(() => transform.DOScale(1f,0.5f)).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
     }
     
 }
