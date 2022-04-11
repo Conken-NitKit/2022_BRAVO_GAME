@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 ///<summary>
-///普通難易度の最初の敵の動きの処理
+///普通難易度の敵の動きの処理
 ///</summary>
 
 public class NormalStageEnemy : MonoBehaviour
@@ -14,18 +14,27 @@ public class NormalStageEnemy : MonoBehaviour
 
     private void Start()
     {
-        MoveFirstNormalStageEnemy();
-        InvokeRepeating(nameof(AppearBullet),0.7f,0.6f);
+        MoveSecondNormalStageenemy();
+    }
+
+    ///<summary>
+    ///最初の敵の動き   
+    ///</summary>
+    void MoveFirstNormalStageEnemy()
+    {
+        this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
+        InvokeRepeating(nameof(AppearBullet),0.7f,0.2f);
         Invoke(nameof(StageClear),30f);
     }
 
     ///<summary>
-    ///敵が左右に往復するメソッド
+    ///２つ目の敵の動き
     ///</summary>
-    void MoveFirstNormalStageEnemy()
+    void MoveSecondNormalStageenemy()
     {
-            this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
-        
+        this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
+        InvokeRepeating(nameof(AppearBullet),0.7f,0.5f);
+        Invoke(nameof(StageClear),30f);
     }
 
     ///<summary>
