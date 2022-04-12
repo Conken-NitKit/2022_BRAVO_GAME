@@ -20,12 +20,6 @@ namespace EnemyMove
         [SerializeField]
         private GameObject firstStageBullet;
 
-        [SerializeField]
-        private GameObject secondStageBullet;
-
-        [SerializeField]
-        private Transform[] secondStageBulletSpawnPositions;
-
         private const float MinPositionX = -4f;
         private const float MaxPositionX = 4f;
 
@@ -34,9 +28,20 @@ namespace EnemyMove
 
         private float enemyMoveTime = 0.5f;
 
+        [SerializeField]
+        private GameObject secondStageBullet;
+
+        [SerializeField]
+        private GameObject sardStageBullet;
+
+        private float generateSpan = 2f;
+
+        [SerializeField]
+        private Transform[] secondStageBulletSpawnPositions;
+
         private void Start()
         {
-            MoveSecondStage();
+            MoveSardStage();
         }
 
         /// <summary>
@@ -67,6 +72,21 @@ namespace EnemyMove
                 }
             })
             .SetLoops(-1, LoopType.Restart);
+        }
+
+        /// <summary>
+        /// 第二ステージの動き
+        /// </summary>
+        public void MoveSardStage()
+        {
+            this.transform.DOLocalRotate(new Vector3(0, 0, generateSpan),
+            generateSpan / 360f,
+            RotateMode.FastBeyond360).OnStepComplete(() =>
+            {
+                Instantiate(sardStageBullet, this.gameObject.transform.position, Quaternion.identity);
+            })
+            .SetLoops(-1, LoopType.Incremental)
+            .SetEase(Ease.Linear);
         }
     }
 }
