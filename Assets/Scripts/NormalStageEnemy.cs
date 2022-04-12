@@ -10,11 +10,11 @@ using DG.Tweening;
 public class NormalStageEnemy : MonoBehaviour
 {  
     [SerializeField]
-    private GameObject EnemyBullet;
+    private GameObject enemyBullet;
 
     private void Start()
     {
-        MoveSecondNormalStageenemy();
+        MoveSecondNormalStageEnemy();
     }
 
     ///<summary>
@@ -24,17 +24,15 @@ public class NormalStageEnemy : MonoBehaviour
     {
         this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         InvokeRepeating(nameof(AppearBullet),0.7f,0.2f);
-        Invoke(nameof(StageClear),30f);
     }
 
     ///<summary>
     ///２つ目の敵の動き
     ///</summary>
-    void MoveSecondNormalStageenemy()
+    void MoveSecondNormalStageEnemy()
     {
         this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
-        InvokeRepeating(nameof(AppearBullet),0.7f,0.5f);
-        Invoke(nameof(StageClear),30f);
+        InvokeRepeating(nameof(AppearBullet),0.7f,0.6f);
     }
 
     ///<summary>
@@ -42,15 +40,6 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     void AppearBullet()
     {
-        Instantiate (EnemyBullet,transform.position,Quaternion.identity);
-    }
-
-    ///<summary>
-    //敵の動きを止めるメソッド
-    ///</summary>
-    void StageClear()
-    {
-        DOTween.KillAll();
-        CancelInvoke();
+        Instantiate (enemyBullet,transform.position,Quaternion.identity);
     }
 }

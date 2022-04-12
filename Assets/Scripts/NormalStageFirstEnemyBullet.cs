@@ -4,13 +4,15 @@ using UnityEngine;
 ///<summary>
 ///普通難易度の最初の敵の弾の動きの処理
 ///</summary>
-public class NormalStageEnemyBullet1 : MonoBehaviour
+public class NormalStageFirstEnemyBullet : MonoBehaviour
 {
     ///<summary>
     ///真下に向かって直進する
     ///</summary>
     void Update()
     {
-        transform.Translate(0,-0.003f,0);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Vector2 force = new Vector2(0,-0.5f);
+        rb.AddForce(force);
     }
 }
