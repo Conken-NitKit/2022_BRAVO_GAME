@@ -490,6 +490,7 @@ MonoBehaviour:
   enemyPlayerAimBullet: {fileID: 7947127159704357093, guid: 7af1492339ce34d8c907639635f9eed1, type: 3}
   firstStageBullet: {fileID: 7947127159704357093, guid: 88b2f62e9c76e4a60ac549b39c4ef977, type: 3}
   secondStageBullet: {fileID: 7947127159704357093, guid: 9f0780fb7aea0499c85c7ba61f5a6722, type: 3}
+  sardStageBullet: {fileID: 7947127159704357093, guid: 62ff79784248340929dc1f1505070b5a, type: 3}
   secondStageBulletSpawnPositions:
   - {fileID: 336530652}
   - {fileID: 1204723392}
