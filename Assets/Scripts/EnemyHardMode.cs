@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System.Threading.Tasks;
+using UnityEngine.Events;
 
 /// <summary>
 /// 敵の動きの名前空間
@@ -14,6 +15,9 @@ namespace EnemyMove
     /// </summary>
     public class EnemyHardMode : MonoBehaviour
     {
+        [SerializeField]
+        private UnityEvent m_event;
+
         [SerializeField]
         private GameObject enemyPlayerAimBullet;
 
@@ -41,7 +45,7 @@ namespace EnemyMove
 
         private void Start()
         {
-            MoveSardStage();
+            m_event.Invoke();
         }
 
         /// <summary>

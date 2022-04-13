@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 763758596}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763758595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -487,6 +487,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7f7753c11a341619fa6cd99b27ba00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2029288593}
+        m_TargetAssemblyTypeName: EnemyMove.EnemyHardMode, Assembly-CSharp
+        m_MethodName: MoveSecondStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   enemyPlayerAimBullet: {fileID: 7947127159704357093, guid: 7af1492339ce34d8c907639635f9eed1, type: 3}
   firstStageBullet: {fileID: 7947127159704357093, guid: 88b2f62e9c76e4a60ac549b39c4ef977, type: 3}
   secondStageBullet: {fileID: 7947127159704357093, guid: 9f0780fb7aea0499c85c7ba61f5a6722, type: 3}
@@ -555,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029288591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.67, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
