@@ -16,7 +16,7 @@ namespace EnemyMove
     public class EnemyHardMode : MonoBehaviour
     {
         [SerializeField]
-        private UnityEvent m_event;
+        private UnityEvent moveEvent;
 
         [SerializeField]
         private GameObject enemyPlayerAimBullet;
@@ -45,7 +45,7 @@ namespace EnemyMove
 
         private void Start()
         {
-            m_event.Invoke();
+            moveEvent.Invoke();
         }
 
         /// <summary>
