@@ -14,13 +14,14 @@ public class EnemyHardSecondStageBullet : MonoBehaviour
     {
         horizontalDirection = (this.transform.position.x < 0) ? 1 : -1;
 
+        //通るポイントを決めると円形に動いてくれる
         transform.DOPath(
             path: new Vector3[]
             {
-                new Vector3(1f * horizontalDirection, 0.5f, 0),//
-                new Vector3(2f * horizontalDirection, 0, 0),//
-                new Vector3(3f * horizontalDirection, 0.5f * -1, 0),//
-                new Vector3(4f * horizontalDirection, 0, 0)//
+                new Vector3(1f * horizontalDirection, 0.5f, 0),//最初に通る場所
+                new Vector3(2f * horizontalDirection, 0, 0),//二番目に通る場所
+                new Vector3(3f * horizontalDirection, 0.5f * -1, 0),//三番目に通る場所
+                new Vector3(4f * horizontalDirection, 0, 0)//四番目に通る場所
             },
             duration: 3f,
             pathType: PathType.CatmullRom
