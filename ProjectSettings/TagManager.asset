@@ -7,6 +7,7 @@ TagManager:
   - EasyButton
   - NomalButton
   - HardButton
+  - Fade
   layers:
   - Default
   - TransparentFX
