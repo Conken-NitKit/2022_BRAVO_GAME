@@ -26,6 +26,7 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
         const float firstMoveTime = 0.8f;
         const float xMoveSize = 0;
         const float yMoveSize = -0.5f;
+        const int waitTime = 1;
         Vector2 force = new Vector2(xMoveSize,yMoveSize);
         while(time < firstMoveTime)
         {
@@ -35,7 +36,7 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
         }
         rigitBody.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(waitTime);
 
         time = 0f;
         playerPosition = player.transform.position;

@@ -21,7 +21,7 @@ public class NormalStageEnemy : MonoBehaviour
 
     private void Start()
     {
-        MoveFirstNormalStageEnemy();
+        MoveSecondNormalStageEnemy();
     }
 
     ///<summary>
