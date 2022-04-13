@@ -8,17 +8,16 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
 {
     [SerializeField]
     private Transform player;
+    [SerializeField]
+    private Rigidbody2D rigitBody;
 
-    //float Speed = 0.004f;
-    Vector2 startposition;
-    Vector2 playerposition;
-    Vector2 headingposition;
+    Vector2 startPosition;
+    Vector2 playerPosition;
 
     private void Start()
     {
-        startposition = this.transform.position;
-        playerposition = player.position;
-        headingposition = playerposition;
+        startPosition = this.transform.position;
+        playerPosition = player.position;
         
         StartCoroutine(BulletMove());
     }
@@ -26,29 +25,27 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
     IEnumerator BulletMove()
     {
         float time = 0f;
-        Vector2 vec = (headingposition - startposition).normalized;
+        Vector2 vec = (playerPosition - startPosition).normalized;
         Vector2 force = (vec*0.5f);
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         while(time < 0.8f)
         {
             time += Time.deltaTime;
-            rb.AddForce(force);
+            rigitBody.AddForce(force);
             yield return null;
         }
-        rb.velocity = Vector2.zero;
+        rigitBody.velocity = Vector2.zero;
 
         yield return new WaitForSeconds(1);
 
         time = 0f;
-        playerposition = player.position;
-        headingposition = playerposition;
-        startposition = transform.position;
-        vec = (headingposition - startposition).normalized;
+        playerPosition = player.position;
+        startPosition = transform.position;
+        vec = (playerPosition - startPosition).normalized;
         force = (vec*0.7f);
         while(time < 100f)
         {
             time += Time.deltaTime;
-            rb.AddForce(force);
+            rigitBody.AddForce(force);
             yield return null;
         }
     }

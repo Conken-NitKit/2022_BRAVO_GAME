@@ -118,6 +118,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7079637071522018880, guid: 50b7e76fa19c6455b8d1573352084625, type: 3}
   m_PrefabInstance: {fileID: 2183787582843624378}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &9196525796090507623 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7056789051541383901, guid: 50b7e76fa19c6455b8d1573352084625, type: 3}
+  m_PrefabInstance: {fileID: 2183787582843624378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2183787582959588737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  rb: {fileID: 9196525796090507623}
