@@ -14,6 +14,6 @@ public class EnemyHardSardStageBullet : MonoBehaviour
 
     void Start()
     {
-        rigidBody.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f),0).normalized * bulletSpeed, ForceMode2D.Force);
+        rigidBody.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f),0).normalized * bulletSpeed, ForceMode2D.Force);//ランダムレンジは方向指定してるだけ
     }
 }

@@ -8,10 +8,13 @@ using DG.Tweening;
 /// </summary>
 public class EnemyPlayerAimBullet : MonoBehaviour
 {
+    [SerializeField]
+    Rigidbody2D rigidBody;
+
+    private float bulletSpeed = 400f;
+
     void Start()
-    {
-        this.transform.DOMove(GameObject.Find("Player").transform.position, 0.5f)
-            .SetEase(Ease.Linear)
-            .SetLoops(-1, LoopType.Incremental);
+    { 
+        rigidBody.AddForce((GameObject.FindWithTag("Player").transform.position - this.transform.position).normalized * bulletSpeed, ForceMode2D.Force);
     }
 }
