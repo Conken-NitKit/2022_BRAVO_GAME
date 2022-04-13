@@ -10,6 +10,8 @@ public class EnemyHardSecondStageBullet : MonoBehaviour
 {
     private int horizontalDirection;
 
+    private float moveRoundSeconds = 3f;
+
     private void Start()
     {
         horizontalDirection = (this.transform.position.x < 0) ? 1 : -1;
@@ -23,7 +25,7 @@ public class EnemyHardSecondStageBullet : MonoBehaviour
                 new Vector3(3f * horizontalDirection, 0.5f * -1, 0),//三番目に通る場所
                 new Vector3(4f * horizontalDirection, 0, 0)//四番目に通る場所
             },
-            duration: 3f,
+            duration: moveRoundSeconds,
             pathType: PathType.CatmullRom
         )
         .SetRelative(true)
