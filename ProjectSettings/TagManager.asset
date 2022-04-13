@@ -8,6 +8,8 @@ TagManager:
   - NomalButton
   - HardButton
   - Fade
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
