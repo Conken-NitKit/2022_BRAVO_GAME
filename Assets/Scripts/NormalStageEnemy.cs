@@ -11,10 +11,17 @@ public class NormalStageEnemy : MonoBehaviour
 {  
     [SerializeField]
     private GameObject enemyBullet;
+    
+    const float limitLeftMovePosition = -3.5f;
+    const float firstYPosition = 3.5f;
+    const float moveTime = 1.1f;
+    const float waitTime = 0.7f;
+    const float firstBulletInterval = 0.16f;
+    const float secondBulletInterval = 0.6f;
 
     private void Start()
     {
-        MoveSecondNormalStageEnemy();
+        MoveFirstNormalStageEnemy();
     }
 
     ///<summary>
@@ -22,8 +29,8 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     void MoveFirstNormalStageEnemy()
     {
-        this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
-        InvokeRepeating(nameof(AppearBullet),0.7f,0.2f);
+        this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
+        InvokeRepeating(nameof(AppearBullet),waitTime,firstBulletInterval);
     }
 
     ///<summary>
@@ -31,8 +38,8 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     void MoveSecondNormalStageEnemy()
     {
-        this.transform.DOMove(new Vector3(-3.5f,3.5f,0f),1.1f).SetDelay(0.7f).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
-        InvokeRepeating(nameof(AppearBullet),0.7f,0.6f);
+        this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
+        InvokeRepeating(nameof(AppearBullet),waitTime,secondBulletInterval);
     }
 
     ///<summary>

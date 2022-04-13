@@ -23,8 +23,11 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
     IEnumerator BulletMove()
     {
         float time = 0f;
-        Vector2 force = new Vector2(0,-0.5f);
-        while(time < 0.8f)
+        const float firstMoveTime = 0.8f;
+        const float xMoveSize = 0;
+        const float yMoveSize = -0.5f;
+        Vector2 force = new Vector2(xMoveSize,yMoveSize);
+        while(time < firstMoveTime)
         {
             time += Time.deltaTime;
             rigitBody.AddForce(force);
@@ -38,8 +41,10 @@ public class NormalStageSecondEnemyBullet : MonoBehaviour
         playerPosition = player.transform.position;
         startPosition = transform.position;
         Vector2 vec = (playerPosition - startPosition).normalized;
-        force = (vec*0.7f);
-        while(time < 100f)
+        const float moveSpeed = 0.7f;
+        const float secondMoveTime = 100f;
+        force = (vec*moveSpeed);
+        while(time < secondMoveTime)
         {
             time += Time.deltaTime;
             rigitBody.AddForce(force);
