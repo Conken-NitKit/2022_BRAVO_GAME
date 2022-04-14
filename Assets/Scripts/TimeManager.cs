@@ -6,8 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     public float limitSeconds { get; private set; }
 
-    [SerializeField]
-    private float timeCountWaitSeconds;
+    private float timeCountWaitSeconds = 0.02f;
 
     /// <summary>
     /// 制限時間を減らしていくメソッド
