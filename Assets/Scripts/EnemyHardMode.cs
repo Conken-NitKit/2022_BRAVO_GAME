@@ -16,7 +16,9 @@ namespace EnemyMove
     public class EnemyHardMode : MonoBehaviour
     {
         [SerializeField]
-        private UnityEvent moveEvent;
+        private UnityEvent[] moveEvent;
+
+        private int moveEventIndex = 0;
 
         [SerializeField]
         private GameObject enemyPlayerAimBullet;
@@ -45,7 +47,7 @@ namespace EnemyMove
 
         private void Start()
         {
-            moveEvent.Invoke();
+            
         }
 
         /// <summary>
@@ -66,7 +68,7 @@ namespace EnemyMove
         /// </summary>
         public void MoveSecondStage()
         {
-            this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 1f, RotateMode.FastBeyond360).OnStepComplete(() =>
+            this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 0.8f, RotateMode.FastBeyond360).OnStepComplete(() =>
             {
                 Instantiate(enemyPlayerAimBullet, this.gameObject.transform.position, Quaternion.identity);
 
