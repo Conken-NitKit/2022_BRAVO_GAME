@@ -14,6 +14,9 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private Text timerText;
 
+    [SerializeField]
+    private GameObject[] gamePauseUIs;
+
     /// <summary>
     /// 制限時間を減らしていくメソッド
     /// </summary>
@@ -31,6 +34,11 @@ public class TimeManager : MonoBehaviour
         }
         DOTween.KillAll();
         Utils.DestroyGameObjectsWithTag("Bullet");
+
+        foreach (GameObject gamePauseUI in gamePauseUIs)
+        {
+            gamePauseUI.SetActive(true);
+        }
 
         Time.timeScale = 0f;
     }
