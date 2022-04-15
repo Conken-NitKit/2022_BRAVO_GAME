@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class TimeManager : MonoBehaviour
 {
@@ -13,15 +14,10 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private Text timerText;
 
-    void Start()
-    {
-        StartCoroutine(CountDownTime());
-    }
-
     /// <summary>
     /// 制限時間を減らしていくメソッド
     /// </summary>
-    public IEnumerator CountDownTime()
+    public async void CountDownTime()
     {
         limitSeconds = 30;
 
@@ -30,8 +26,12 @@ public class TimeManager : MonoBehaviour
             limitSeconds -= timeCountWaitSeconds;
             timerText.text = limitSeconds.ToString("f2");
             transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds);
-            
-            yield return new WaitForSeconds(timeCountWaitSeconds);
+
+            await Task.Delay((int)(timeCountWaitSeconds * 1000));
         }
+        DOTween.KillAll();
+        Utils.DestroyGameObjectsWithTag("Bullet");
+
+        Time.timeScale = 0f;
     }
 }

@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System.Threading.Tasks;
-using UnityEngine.Events;
 
 /// <summary>
 /// 敵の動きの名前空間
@@ -15,11 +13,6 @@ namespace EnemyMove
     /// </summary>
     public class EnemyHardMode : MonoBehaviour
     {
-        [SerializeField]
-        private UnityEvent[] moveEvent;
-
-        private int moveEventIndex = 0;
-
         [SerializeField]
         private GameObject enemyPlayerAimBullet;
 
@@ -55,6 +48,8 @@ namespace EnemyMove
         /// </summary>
         public void MoveFirstStage()
         {
+            this.gameObject.transform.position = new Vector3(0, 3f, 0);
+
             this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), enemyMoveTime, RotateMode.FastBeyond360).OnStepComplete(() =>
             {
                 this.transform.DOMove(new Vector3(Random.Range(MinPositionX, MaxPositionX), Random.Range(MinPositionY, MaxPositionY), 0f), enemyMoveTime);
@@ -68,6 +63,9 @@ namespace EnemyMove
         /// </summary>
         public void MoveSecondStage()
         {
+            this.gameObject.transform.position = new Vector3(0, 3f, 0);
+            this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0);
+
             this.transform.DOLocalRotate(new Vector3(0f, 0f, 360f), 0.8f, RotateMode.FastBeyond360).OnStepComplete(() =>
             {
                 Instantiate(enemyPlayerAimBullet, this.gameObject.transform.position, Quaternion.identity);
@@ -81,10 +79,13 @@ namespace EnemyMove
         }
 
         /// <summary>
-        /// 第二ステージの動き
+        /// 第三ステージの動き
         /// </summary>
         public void MoveSardStage()
         {
+            this.gameObject.transform.position = new Vector3(0, 4f, 0);
+            this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0);
+
             this.transform.DOLocalRotate(new Vector3(0, 0, generateSpan),
             generateSpan / 360f,
             RotateMode.FastBeyond360).OnStepComplete(() =>
