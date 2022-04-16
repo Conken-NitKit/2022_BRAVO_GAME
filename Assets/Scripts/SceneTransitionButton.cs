@@ -26,6 +26,7 @@ public class SceneTransitionButton : MonoBehaviour
     /// </summary>
     public void OnClicked()
     {
+        Time.timeScale = 1f;
         transform.DOScale(1.1f,0.5f).SetEase(Ease.OutElastic)
         .OnComplete(() => transform.DOScale(1f,0.5f)).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
     }
