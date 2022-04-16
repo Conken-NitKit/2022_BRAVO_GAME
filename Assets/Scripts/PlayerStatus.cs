@@ -14,6 +14,5 @@ public class PlayerStatus : MonoBehaviour
     public void IncreaseGraze(int point = 1)
     {
         playerGraze += point;
-        Debug.Log(playerGraze);
     }
 }

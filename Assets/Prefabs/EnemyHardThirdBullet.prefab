@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3386981700619787859}
   - component: {fileID: 6700797423043320409}
   m_Layer: 0
-  m_Name: EnemyHardSardBullet
+  m_Name: EnemyHardThirdBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!50 &7056789051541383901
 Rigidbody2D:
   serializedVersion: 4
