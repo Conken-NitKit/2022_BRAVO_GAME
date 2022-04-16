@@ -31,7 +31,7 @@ namespace EnemyMove
         private GameObject secondStageBullet;
 
         [SerializeField]
-        private GameObject sardStageBullet;
+        private GameObject thirdStageBullet;
 
         private float generateSpan = 2f;
 
@@ -81,7 +81,7 @@ namespace EnemyMove
         /// <summary>
         /// 第三ステージの動き
         /// </summary>
-        public void MoveSardStage()
+        public void MoveThirdStage()
         {
             this.gameObject.transform.position = new Vector3(0, 4f, 0);
             this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0);
@@ -90,7 +90,7 @@ namespace EnemyMove
             generateSpan / 360f,
             RotateMode.FastBeyond360).OnStepComplete(() =>
             {
-                Instantiate(sardStageBullet, this.gameObject.transform.position, Quaternion.identity);
+                Instantiate(thirdStageBullet, this.gameObject.transform.position, Quaternion.identity);
             })
             .SetLoops(-1, LoopType.Incremental)
             .SetEase(Ease.Linear);

@@ -95,25 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7f7753c11a341619fa6cd99b27ba00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6617320037540738033}
-        m_TargetAssemblyTypeName: EnemyMove.EnemyHardMode, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   enemyPlayerAimBullet: {fileID: 7947127159704357093, guid: 7af1492339ce34d8c907639635f9eed1, type: 3}
   firstStageBullet: {fileID: 7947127159704357093, guid: 88b2f62e9c76e4a60ac549b39c4ef977, type: 3}
   secondStageBullet: {fileID: 7947127159704357093, guid: 9f0780fb7aea0499c85c7ba61f5a6722, type: 3}
-  sardStageBullet: {fileID: 7947127159704357093, guid: 62ff79784248340929dc1f1505070b5a, type: 3}
+  thirdStageBullet: {fileID: 7947127159704357093, guid: 62ff79784248340929dc1f1505070b5a, type: 3}
   secondStageBulletSpawnPositions:
   - {fileID: 0}
   - {fileID: 0}

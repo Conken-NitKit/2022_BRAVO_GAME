@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 難しい第三ステージの敵の弾
 /// </summary>
-public class EnemyHardSardStageBullet : MonoBehaviour
+public class EnemyHardThirdStageBullet : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D rigidBody;
