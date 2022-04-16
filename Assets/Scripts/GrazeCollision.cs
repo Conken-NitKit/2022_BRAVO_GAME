@@ -7,11 +7,15 @@ public class GrazeCollision : MonoBehaviour
     [SerializeField]
     PlayerStatus playerStatus;
 
+    [SerializeField]
+    ScoreText scoretext;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
             playerStatus.IncreaseGraze();
+            scoretext.SetScore();
         }
     }
 }
