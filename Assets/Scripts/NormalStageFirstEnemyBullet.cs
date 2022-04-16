@@ -13,7 +13,6 @@ public class NormalStageFirstEnemyBullet : MonoBehaviour
     ///</summary>
     void Update()
     {
-        //Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector2 force = new Vector2(0,-0.5f);
         rigitBody.AddForce(force);
     }
