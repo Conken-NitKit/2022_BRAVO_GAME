@@ -28,7 +28,7 @@ public class NextStageButton : MonoBehaviour
 
         if(moveEventIndex == 0)
         {
-            buttonText.text = "Next Stage";
+            buttonText.text = "つぎのすてーじ";
         }
 
         moveEventIndex++;
