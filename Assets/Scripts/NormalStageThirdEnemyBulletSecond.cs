@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 ///<summary>
-///普通難易度の最後の敵の弾の動きの処理３
+///普通難易度の最後の敵の弾の動きの処理２
 ///</summary>
-public class NormalStageLastEnemyBulletThird : MonoBehaviour
+public class NormalStageThirdEnemyBulletSecond : MonoBehaviour
 {
     const float rotationTime = 6f;
     const float downTime = 1.8f;

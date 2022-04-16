@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 ///<summary>
-///普通難易度の最後の敵の弾の動きの処理４
+///普通難易度の最後の敵の弾の動きの処理３
 ///</summary>
-public class NormalStageLastEnemyBulletForth : MonoBehaviour
+public class NormalStageThirdEnemyBulletThird : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rigitBody;
     [SerializeField]
     private GameObject enemyLastFirstBullet;
 
-    const float flyTime = 1.1f;
-    const float destroyTime = 1.2f;
+    const float flyTime = 1f;
+    const float destroyTime = 1.1f;
     ///<summary>
     ///拡がる弾を呼び出した後消える
     ///</summary>

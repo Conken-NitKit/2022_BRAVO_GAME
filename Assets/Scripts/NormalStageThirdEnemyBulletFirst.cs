@@ -4,7 +4,7 @@ using UnityEngine;
 ///<summary>
 ///普通難易度の最後の敵の弾の動きの処理１
 ///</summary>
-public class NormalStageLastEnemyBulletFirst : MonoBehaviour
+public class NormalStageThirdEnemyBulletFirst : MonoBehaviour
 {
     [SerializeField]
     private float xMoveValue;

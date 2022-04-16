@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2065687284430665755}
   - component: {fileID: 5500528688078113029}
   m_Layer: 0
-  m_Name: EnemyNormalLastStageBulletFifth
+  m_Name: EnemyNormalThirdStageBulletThird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

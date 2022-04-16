@@ -220,11 +220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyFirstBullet: {fileID: 7629056669224755441, guid: 891f3f783f3834a4ab7ff14df0987daa, type: 3}
   enemySecondBullet: {fileID: 1587117771140887933, guid: 776906b1bafea2c47b2353e1ea196472, type: 3}
-  enemyLastFirstBullet: {fileID: 821127905224520566, guid: 7c5f5afef99c39144a35b729a293964c, type: 3}
-  enemyLastSecondBullet: {fileID: 4758632714084264854, guid: 419d6d19bab28454f8ae6b121721f83c, type: 3}
-  enemyLastThirdBullet: {fileID: 2865335324319512996, guid: 1debc027119baac4ab52854a0402d06c, type: 3}
-  enemyLastForthBullet: {fileID: 8204627745853350859, guid: 7efd1fc34064491409d164547a3b3431, type: 3}
-  enemyLastFifthBullet: {fileID: 2457861183391224147, guid: 4ecf0d50fed131a438ca1d7ca6f3632d, type: 3}
+  enemyThirdFirstBullet: {fileID: 821127905224520566, guid: 7c5f5afef99c39144a35b729a293964c, type: 3}
+  enemyThirdSecondBullet: {fileID: 8204627745853350859, guid: 7efd1fc34064491409d164547a3b3431, type: 3}
+  enemyThirdThirdBullet: {fileID: 2457861183391224147, guid: 4ecf0d50fed131a438ca1d7ca6f3632d, type: 3}
 --- !u!1 &1348409479
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,15 +14,11 @@ public class NormalStageEnemy : MonoBehaviour
     [SerializeField]
     private GameObject enemySecondBullet;
     [SerializeField]
-    private GameObject enemyLastFirstBullet;
+    private GameObject enemyThirdFirstBullet;
     [SerializeField]
-    private GameObject enemyLastSecondBullet;
+    private GameObject enemyThirdSecondBullet;
     [SerializeField]
-    private GameObject enemyLastThirdBullet;
-    [SerializeField]
-    private GameObject enemyLastForthBullet;
-    [SerializeField]
-    private GameObject enemyLastFifthBullet;
+    private GameObject enemyThirdThirdBullet;
 
     const float limitLeftMovePosition = -3.5f;
     const float limitRightMovePosition = 3.5f;
@@ -68,72 +64,40 @@ public class NormalStageEnemy : MonoBehaviour
     private IEnumerator MoveLastNormalStageEnemy()
     {
         this.transform.DOMove(new Vector2(firstXPositionLastStage,firstYPosition),firstMoveTimeLastStage);
-        Invoke(nameof(AppearLastFirstBullet),waitTime);
-        yield return new WaitForSeconds(waitTime);
-        AppearLastSecondBullet();
+        Invoke(nameof(AppearThirdFirstBullet),waitTime);
         yield return new WaitForSeconds(waitTimeLastStage);
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),firstMoveTimeLastStage);
         yield return new WaitForSeconds(waitTime);
         this.transform.DOMove(new Vector2(limitRightMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         float numberTime = 0f;
-        float maxNumberTime = 14f;
+        float maxNumberTime = 28f;
         while (numberTime < maxNumberTime)
         {
-            if((numberTime == 4) || (numberTime == 8) || (numberTime == 12))
+            if((numberTime == 4) || (numberTime == 16) || (numberTime == 24))
             {
                 AppearSecondBullet();
-            }else if((numberTime == 6) || (numberTime == 10)){
-                AppearLastFifthBullet();
+            }else if(numberTime == 23){
+                AppearThirdThirdBullet();
             }else{
                 AppearFirstBullet();
             }
             yield return new WaitForSeconds(LastBulletInteryal);
-            if((numberTime == 2) || (numberTime == 5) || (numberTime == 12))
+            if((numberTime == 2) || (numberTime == 10) || (numberTime == 27))
             {
-                AppearLastFourthBullet();
-            }else if((numberTime == 7) || (numberTime == 10)){
+                AppearThirdSecondBullet();
+            }else if(numberTime == 18){
                 AppearFirstBullet();
                 AppearSecondBullet();
             }else{
                 AppearFirstBullet();
             }
             yield return new WaitForSeconds(LastBulletInteryal);
-            if((numberTime == 4) || (numberTime == 9))
+            if((numberTime == 6) || (numberTime == 12) || (numberTime == 15) || (numberTime == 26))
             {
-                AppearLastThirdBullet();
-            }else if(numberTime == 0){
-                AppearLastFifthBullet();
-            }else{
-                AppearLastFirstBullet();
-            }
-            yield return new WaitForSeconds(LastBulletInteryal);
-            if((numberTime == 6) || (numberTime == 7))
-            {
-                AppearLastThirdBullet();
-            }else if((numberTime == 0) || (numberTime == 3) || (numberTime == 10)){
-                AppearLastFourthBullet();
-            }else if(numberTime == 1){
-                AppearLastFirstBullet();
-                AppearLastFifthBullet();
-            }else{
-                AppearFirstBullet();
-            }
-            yield return new WaitForSeconds(LastBulletInteryal);
-            if((numberTime == 4) || (numberTime == 7))
-            {
-                AppearLastFourthBullet();
-            }else if(numberTime == 12){
-                AppearLastFifthBullet();
-            }else{
-                AppearFirstBullet();
-            }
-            yield return new WaitForSeconds(LastBulletInteryal);
-            if((numberTime == 3) || (numberTime == 9))
-            {
-                AppearLastFifthBullet();
-            }else if((numberTime == 2) || (numberTime == 11)){
-                AppearSecondBullet();
-                AppearLastFirstBullet();
+                AppearThirdSecondBullet();
+            }else if((numberTime == 0) || (numberTime == 17)){
+                AppearThirdFirstBullet();
+                AppearThirdThirdBullet();
             }else{
                 AppearFirstBullet();
             }
@@ -159,36 +123,22 @@ public class NormalStageEnemy : MonoBehaviour
     ///<summary>
     ///敵を中心に拡がる弾を呼び出すメソッド
     ///</summary>
-    void AppearLastFirstBullet()
+    void AppearThirdFirstBullet()
     {
-        Instantiate (enemyLastFirstBullet,transform.position,Quaternion.identity);
-    }
-    ///<summary>
-    ///敵を中心に拡がる弾を呼び出すメソッド（２つ目）
-    ///</summary>
-    void AppearLastSecondBullet()
-    {
-        Instantiate (enemyLastSecondBullet,transform.position,Quaternion.identity);
-    }
-    ///<summary>
-    ///右回転する大型の環状の弾を呼び出すメソッド
-    ///</summary>
-    void AppearLastThirdBullet()
-    {
-        Instantiate (enemyLastThirdBullet,transform.position,Quaternion.identity);
+        Instantiate (enemyThirdFirstBullet,transform.position,Quaternion.identity);
     }
     ///<summary>
     ///左回転する小型の環状の弾を呼び出すメソッド
     ///</summary>
-    void AppearLastFourthBullet()
+    void AppearThirdSecondBullet()
     {
-        Instantiate (enemyLastForthBullet,transform.position,Quaternion.identity);
+        Instantiate (enemyThirdSecondBullet,transform.position,Quaternion.identity);
     }
     ///<summary>
     ///真下に進んだ後拡がる弾を呼び出すメソッド
     ///</summary>
-    void AppearLastFifthBullet()
+    void AppearThirdThirdBullet()
     {
-        Instantiate (enemyLastFifthBullet,transform.position,Quaternion.identity);
+        Instantiate (enemyThirdThirdBullet,transform.position,Quaternion.identity);
     }
 }
