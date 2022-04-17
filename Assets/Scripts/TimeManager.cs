@@ -24,6 +24,9 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private GameObject titleButton;
 
+    [SerializeField]
+    private ResultScoreText scoreText;
+
     private void Start()
     {
         stageIndex = 0;
@@ -35,7 +38,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     public async void CountDownTime()
     {
-        limitSeconds = 30;
+        limitSeconds = 15;
 
         transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).SetLoops(-1, LoopType.Restart).SetDelay(timeCountWaitSeconds);
 
@@ -51,6 +54,8 @@ public class TimeManager : MonoBehaviour
 
         DOTween.KillAll();
         Utils.DestroyGameObjectsWithTag("Bullet");
+
+        scoreText.SetResultScore();
 
         foreach (GameObject gamePauseUI in gamePauseUIs)
         {
