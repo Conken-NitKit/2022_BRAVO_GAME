@@ -10,8 +10,8 @@ namespace HomingBullet
     public class HomingBullet : MonoBehaviour
     {
 
-        [SerializeField] float LifeTime = 10f;
-        [SerializeField] float Speed = 2.5f;
+        [SerializeField] float lifeTime = 10f;
+        [SerializeField] float speed = 2.5f;
 
         // Start is called before the first frame update
         void Start()
@@ -19,7 +19,7 @@ namespace HomingBullet
             /// <summary>
             /// 追尾弾の寿命
             /// </summary>
-            Destroy(this.gameObject, LifeTime);
+            Destroy(this.gameObject, lifeTime);
         }
 
         // Update is called once per frame
@@ -32,7 +32,7 @@ namespace HomingBullet
         /// </summary>
         void Homing()
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime*Speed);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime*speed);
         }
     }
 }

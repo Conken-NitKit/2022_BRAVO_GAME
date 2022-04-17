@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class SpoonHomingBullet : MonoBehaviour
 {
-    public GameObject HomingBullet;
-    float Seconds = 0;
+    [SerializeField] private GameObject HomingBullet;
+    float seconds = 0;
     
     void Start()
     {
@@ -16,12 +16,12 @@ public class SpoonHomingBullet : MonoBehaviour
     }
     void Update()
     {
-        Seconds += Time.deltaTime;
+        seconds += Time.deltaTime;
         //Debug.Log(Seconds);
-        if(Seconds>=3)
+        if(seconds>=3)
         {
             Spoon();
-            Seconds = 0;
+            seconds = 0;
         }
     }
     void Spoon()
