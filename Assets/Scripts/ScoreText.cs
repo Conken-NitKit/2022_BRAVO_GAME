@@ -20,7 +20,7 @@ public class ScoreText : MonoBehaviour
     
     public void SetScore()
     {
-        scoreText.text = "ぐれいず : " + playerStatus.playerGraze.ToString();
+        scoreText.text = $"ぐれいず : {playerStatus.playerGraze}";
         transform.DOPunchScale(new Vector2(0.1f, 0.1f), 0.02f);
-    }    
+    }
 }
