@@ -38,10 +38,6 @@ namespace EnemyMove
         [SerializeField]
         private Transform[] secondStageBulletSpawnPositions;
 
-        private void Start()
-        {
-            
-        }
 
         /// <summary>
         /// 第一ステージの動き

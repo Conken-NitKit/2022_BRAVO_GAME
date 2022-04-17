@@ -35,14 +35,14 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     public async void CountDownTime()
     {
-        limitSeconds = 15;
+        limitSeconds = 30;
 
         transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).SetLoops(-1, LoopType.Restart).SetDelay(timeCountWaitSeconds);
 
         while (limitSeconds >= 0 && Time.timeScale != 0f)
         {
             limitSeconds -= timeCountWaitSeconds;
-            timerText.text = limitSeconds.ToString("f2");
+            timerText.text = "たいむ: " + limitSeconds.ToString("f2");
 
             await Task.Delay((int)(timeCountWaitSeconds * 1000));
         }

@@ -28,7 +28,7 @@ public class NormalStageEnemy : MonoBehaviour
     const float waitTime = 0.7f;
     const float firstBulletInterval = 0.16f;
     const float secondBulletInterval = 0.6f;
-    const float LastBulletInteryal = 0.3f;
+    const float lastBulletInteryall = 0.3f;
     const float firstXPositionLastStage = 0f;
     const float firstMoveTimeLastStage = 0.7f;
     const float waitTimeLastStage = 1f;
@@ -37,13 +37,12 @@ public class NormalStageEnemy : MonoBehaviour
     private void Start()
     {
         this.transform.position = new Vector2(firstXPosition,firstYPosition);
-        StartCoroutine(MoveLastNormalStageEnemy());
     }
 
     ///<summary>
     ///最初の敵の動き   
     ///</summary>
-    void MoveFirstNormalStageEnemy()
+    public void MoveFirstNormalStageEnemy()
     {
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         InvokeRepeating(nameof(AppearFirstBullet),waitTime,firstBulletInterval);
@@ -52,7 +51,7 @@ public class NormalStageEnemy : MonoBehaviour
     ///<summary>
     ///２つ目の敵の動き
     ///</summary>
-    void MoveSecondNormalStageEnemy()
+    public void MoveSecondNormalStageEnemy()
     {
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         InvokeRepeating(nameof(AppearSecondBullet),waitTime,secondBulletInterval);
@@ -61,7 +60,7 @@ public class NormalStageEnemy : MonoBehaviour
     ///<summary>
     ///最後の敵の動き
     ///</summary>
-    private IEnumerator MoveLastNormalStageEnemy()
+    public IEnumerator MoveLastNormalStageEnemy()
     {
         this.transform.DOMove(new Vector2(firstXPositionLastStage,firstYPosition),firstMoveTimeLastStage);
         Invoke(nameof(AppearThirdFirstBullet),waitTime);
@@ -81,7 +80,7 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(LastBulletInteryal);
+            yield return new WaitForSeconds(lastBulletInteryall);
             if((numberTime == 2) || (numberTime == 10) || (numberTime == 27))
             {
                 AppearThirdSecondBullet();
@@ -91,7 +90,7 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(LastBulletInteryal);
+            yield return new WaitForSeconds(lastBulletInteryall);
             if((numberTime == 6) || (numberTime == 12) || (numberTime == 15) || (numberTime == 26))
             {
                 AppearThirdSecondBullet();
@@ -101,7 +100,7 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(LastBulletInteryal);
+            yield return new WaitForSeconds(lastBulletInteryall);
             numberTime++;
         }
     }
