@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6182433860249944145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36ad1cc52683e6418e4e88c406c2523, type: 3}
+  m_Script: {fileID: 11500000, guid: 07cebec111e2d304195099363de26efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HomingBullet: {fileID: 8096480175172086820, guid: 4dd201152b536624b82ead7ce79e86b4, type: 3}
+  homingBullet: {fileID: 8096480175172086820, guid: 4dd201152b536624b82ead7ce79e86b4, type: 3}

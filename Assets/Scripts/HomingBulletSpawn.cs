@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 追尾弾の生成の名前空間
+/// 追尾弾の生成のクラス
 /// </summary>
-public class SpoonHomingBullet : MonoBehaviour
+public class HomingBulletSpawn: MonoBehaviour
 {
-    [SerializeField] private GameObject HomingBullet;
+    [SerializeField] private GameObject homingBullet;
     float seconds = 0;
     
     void Start()
     {
-        Spoon();
+        Spawn();
     }
     void Update()
     {
         seconds += Time.deltaTime;
-        //Debug.Log(Seconds);
         if(seconds>=3)
         {
-            Spoon();
+            Spawn();
             seconds = 0;
         }
     }
-    void Spoon()
+    void Spawn()
     {
-        Instantiate(HomingBullet,this.transform.position,this.transform.rotation);
+        Instantiate(homingBullet,this.transform.position,this.transform.rotation);
     }
 
 }

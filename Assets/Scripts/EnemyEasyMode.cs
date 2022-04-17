@@ -16,10 +16,10 @@ namespace EnemyMove
     public class EnemyEasyMode : MonoBehaviour
     {
         [SerializeField] private UnityEvent moveEvent;
-        [SerializeField] private GameObject spawner1st;
-        [SerializeField] private GameObject homingBullet2nd;
-        [SerializeField] private GameObject homingBullet3rd;
-        private Vector3[] path2nd = 
+        [SerializeField] private GameObject homingBulletFirst;
+        [SerializeField] private GameObject homingBulletSecond;
+        [SerializeField] private GameObject homingBulletThird;
+        private Vector3[] pathSecond = 
         {
             new Vector3(0f,4f,0f),
             new Vector3(-3f,3f,0f),
@@ -27,7 +27,7 @@ namespace EnemyMove
             new Vector3(3f,3f,0f),
             new Vector3(0f,4f,0f)
         };
-        private Vector3[] path3rd = 
+        private Vector3[] pathThird = 
         {
             new Vector3(0f,4f,0f),
             new Vector3(-3f,4f,0f),
@@ -46,38 +46,46 @@ namespace EnemyMove
         /// <summary>
         /// 第一ステージの行動
         /// </summary>
-        public void Move1stStage()
+        public void MoveFirstStage()
         {
             this.transform.DOMove(new Vector2(0f,4f),2f);
-            Instantiate(spawner1st, this.transform.position, this.transform.rotation);
+            InvokeRepeating(nameof(SpawnFirst),0f,3f);
         }
 
         /// <summary>
         /// 第二ステージの行動
         /// </summary>
-        public void Move2ndStage()
+        public void MoveSecondStage()
         {
             this.transform.position = new Vector3(0f,4f,0f);
-            this.transform.DOPath(path2nd,10f).SetLoops(3,LoopType.Restart);
-            InvokeRepeating(nameof(Spawn2nd),0f,3f);
+            this.transform.DOPath(pathSecond,10f).SetLoops(3,LoopType.Restart);
+            InvokeRepeating(nameof(SpawnSecond),0f,3f);
         }
 
         /// <summary>
         /// 第三ステージの行動
         /// </summary>
-        public void Move3rdStage()
+        public void MoveThirdStage()
         {
             this.transform.position = new Vector3(0f,4f,0f);
-            this.transform.DOPath(path3rd,15f).SetEase(Ease.OutSine).SetLoops(2,LoopType.Yoyo);
-            InvokeRepeating(nameof(Spawn3rd),0f,2f);
+            this.transform.DOPath(pathThird,15f).SetEase(Ease.OutSine).SetLoops(2,LoopType.Yoyo);
+            InvokeRepeating(nameof(SpawnThird),0f,2f);
+        }
+
+        /// <summary>
+        /// 第一ステージの弾の生成
+        /// </summary>
+        void SpawnFirst()
+        {
+            Instantiate(homingBulletFirst, this.transform.position, this.transform.rotation);
         }
 
         /// <summary>
         /// 第二ステージの弾の生成
         /// </summary>
-        void Spawn2nd()
+        void SpawnSecond()
         {
-            Instantiate(homingBullet2nd, this.transform.position, this.transform.rotation);
+            Instantiate(homingBulletSecond, this.transform.position, this.transform.rotation);
         }
 
         
@@ -85,9 +93,9 @@ namespace EnemyMove
         /// <summary>
         /// 第三ステージの弾の生成
         /// </summary>
-        void Spawn3rd()
+        void SpawnThird()
         {
-            Instantiate(homingBullet3rd, this.transform.position, this.transform.rotation);
+            Instantiate(homingBulletThird, this.transform.position, this.transform.rotation);
         }
     }
 }
