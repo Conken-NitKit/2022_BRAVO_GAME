@@ -12,7 +12,7 @@ public class GrazeCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Enemy"))
         {
             playerStatus.IncreaseGraze();
             scoretext.SetScore();
