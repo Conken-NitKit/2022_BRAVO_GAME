@@ -60,7 +60,6 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     public async void MoveLastNormalStageEnemy()
     {
-        this.transform.position = new Vector2(firstXPosition, firstYPosition);
         this.transform.DOMove(new Vector2(firstXPositionLastStage,firstYPosition),firstMoveTimeLastStage);
         Invoke(nameof(AppearThirdFirstBullet),waitTime);
         await Task.Delay((int)(waitTimeLastStage * 1000));
@@ -109,34 +108,49 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     void AppearFirstBullet()
     {
-        Instantiate (enemyFirstBullet,transform.position,Quaternion.identity);
+        if(Time.timeScale != 0f)
+        {
+            Instantiate (enemyFirstBullet,transform.position,Quaternion.identity);
+        }
     }
     ///<summary>
     ///プレイヤーに向かって進む弾を呼び出すメソッド
     ///</summary>
     void AppearSecondBullet()
     {
-        Instantiate (enemySecondBullet,transform.position,Quaternion.identity);
+        if (Time.timeScale != 0f)
+        {
+            Instantiate (enemySecondBullet,transform.position,Quaternion.identity);
+        }
     }
     ///<summary>
     ///敵を中心に拡がる弾を呼び出すメソッド
     ///</summary>
     void AppearThirdFirstBullet()
     {
-        Instantiate (enemyThirdFirstBullet,transform.position,Quaternion.identity);
+        if (Time.timeScale != 0f)
+        {
+            Instantiate (enemyThirdFirstBullet,transform.position,Quaternion.identity);
+        }
     }
     ///<summary>
     ///左回転する小型の環状の弾を呼び出すメソッド
     ///</summary>
     void AppearThirdSecondBullet()
     {
-        Instantiate (enemyThirdSecondBullet,transform.position,Quaternion.identity);
+        if (Time.timeScale != 0f)
+        {
+            Instantiate (enemyThirdSecondBullet,transform.position,Quaternion.identity);
+        }
     }
     ///<summary>
     ///真下に進んだ後拡がる弾を呼び出すメソッド
     ///</summary>
     void AppearThirdThirdBullet()
     {
-        Instantiate (enemyThirdThirdBullet,transform.position,Quaternion.identity);
+        if (Time.timeScale != 0f)
+        {
+            Instantiate (enemyThirdThirdBullet,transform.position,Quaternion.identity);
+        }
     }
 }

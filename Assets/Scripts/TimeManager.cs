@@ -38,7 +38,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     public async void CountDownTime()
     {
-        limitSeconds = 30;
+        limitSeconds = 15;
 
         transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).SetLoops(-1, LoopType.Restart).SetDelay(timeCountWaitSeconds);
 
