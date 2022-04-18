@@ -8,12 +8,19 @@ using UnityEngine;
 public class EnemyHardThirdStageBullet : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D rigidBody;
+    private Color[] colors;
+
+    [SerializeField]
+    private Rigidbody2D rigidBody;
+
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
     private float bulletSpeed = 400f;
 
     void Start()
     {
+        spriteRenderer.color = colors[Random.Range(0, colors.Length)];
         rigidBody.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f),0).normalized * bulletSpeed, ForceMode2D.Force);//ランダムレンジは方向指定してるだけ
     }
 }
