@@ -15,7 +15,6 @@ namespace EnemyMove
     /// </summary>
     public class EnemyEasyMode : MonoBehaviour
     {
-        [SerializeField] private UnityEvent moveEvent;
         [SerializeField] private GameObject homingBulletFirst;
         [SerializeField] private GameObject homingBulletSecond;
         [SerializeField] private GameObject homingBulletThird;
@@ -38,17 +37,13 @@ namespace EnemyMove
             new Vector3(-3f,4f,0f)
         };
 
-        private void Start()
-        {
-            moveEvent.Invoke();
-        }
 
         /// <summary>
         /// 第一ステージの行動
         /// </summary>
         public void MoveFirstStage()
         {
-            this.transform.DOMove(new Vector2(0f,4f),2f);
+            this.transform.DOMove(new Vector2(0f,3f),2f);
             InvokeRepeating(nameof(SpawnFirst),0f,3f);
         }
 
@@ -87,8 +82,6 @@ namespace EnemyMove
         {
             Instantiate(homingBulletSecond, this.transform.position, this.transform.rotation);
         }
-
-        
 
         /// <summary>
         /// 第三ステージの弾の生成

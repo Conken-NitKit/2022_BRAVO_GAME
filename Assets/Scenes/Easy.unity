@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e77b42e68072146a75d0a56d3380b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 0}
+  playerStatus: {fileID: 462290831}
   scoreText: {fileID: 197099950}
 --- !u!114 &197099950
 MonoBehaviour:
@@ -318,6 +318,11 @@ RectTransform:
   m_AnchoredPosition: {x: 210, y: 400}
   m_SizeDelta: {x: 330, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &234782752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296696128701255845, guid: a5506b0c740d64ef5ab1476335b724c9, type: 3}
+  m_PrefabInstance: {fileID: 1989277727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &244652381
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb63ffe5c4234bc383b5195ccafb5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 0}
+  playerStatus: {fileID: 462290831}
   scoreText: {fileID: 244652384}
 --- !u!114 &244652384
 MonoBehaviour:
@@ -566,6 +571,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &462290831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6180337012668275097, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+  m_PrefabInstance: {fileID: 1951082981}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa901e1c1be3749b5a3cf2f2729980f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &564616939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,8 +1019,8 @@ MonoBehaviour:
   moveEvent:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnemyMove.EnemyHardMode, Assembly-CSharp
+      - m_Target: {fileID: 1989277729}
+        m_TargetAssemblyTypeName: EnemyMove.EnemyEasyMode, Assembly-CSharp
         m_MethodName: MoveFirstStage
         m_Mode: 1
         m_Arguments:
@@ -1017,8 +1033,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnemyMove.EnemyHardMode, Assembly-CSharp
+      - m_Target: {fileID: 1989277729}
+        m_TargetAssemblyTypeName: EnemyMove.EnemyEasyMode, Assembly-CSharp
         m_MethodName: MoveSecondStage
         m_Mode: 1
         m_Arguments:
@@ -1031,8 +1047,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnemyMove.EnemyHardMode, Assembly-CSharp
+      - m_Target: {fileID: 1989277729}
+        m_TargetAssemblyTypeName: EnemyMove.EnemyEasyMode, Assembly-CSharp
         m_MethodName: MoveThirdStage
         m_Mode: 1
         m_Arguments:
@@ -1296,6 +1312,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 1389842554}
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 234782752}
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 202107002}
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameOverObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 422431095}
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameOverObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1491883807}
+    - target: {fileID: -1912819020743921416, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: gameOverObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 564616939}
+    - target: {fileID: 3375180993029041656, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
+      propertyPath: scoretext
+      value: 
+      objectReference: {fileID: 197099949}
     - target: {fileID: 6202300359686033088, guid: 8df65eb10e3ea43ad814a77fa881a5a6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1353,6 +1397,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2379080929067947568, guid: a5506b0c740d64ef5ab1476335b724c9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8296696128701255845, guid: a5506b0c740d64ef5ab1476335b724c9, type: 3}
       propertyPath: m_Name
       value: EasyEnemy
@@ -1403,6 +1451,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5506b0c740d64ef5ab1476335b724c9, type: 3}
+--- !u!114 &1989277729 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8296696128701255844, guid: a5506b0c740d64ef5ab1476335b724c9, type: 3}
+  m_PrefabInstance: {fileID: 1989277727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234782752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a789b195800e34184cdd2654338552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2029690938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1498,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.68235296, b: 0.7019608, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
