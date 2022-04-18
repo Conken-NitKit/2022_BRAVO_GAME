@@ -313,7 +313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &270934406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85.47499}
+  m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 330, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270934407
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 270934405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e77b42e68072146a75d0a56d3380b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fb63ffe5c4234bc383b5195ccafb5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerStatus: {fileID: 1359178537}
@@ -677,7 +677,9 @@ MonoBehaviour:
   - {fileID: 1832150505}
   - {fileID: 1711369437}
   - {fileID: 1461973764}
+  - {fileID: 270934405}
   titleButton: {fileID: 2021893053}
+  scoreText: {fileID: 270934407}
 --- !u!114 &688168757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,7 +1062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1398725537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1139,7 +1141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1457042850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1441,7 @@ MonoBehaviour:
   - {fileID: 1711369437}
   - {fileID: 1461973764}
   - {fileID: 1398725536}
+  - {fileID: 270934405}
 --- !u!114 &1711369440
 MonoBehaviour:
   m_ObjectHideFlags: 0
