@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.Events;
-using System.Threading.Tasks;
 
 /// <summary>
 /// 敵の動きの名前空間

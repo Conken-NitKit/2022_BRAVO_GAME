@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Threading.Tasks;
 
 ///<summary>
 ///普通難易度の敵の動きの処理
@@ -32,18 +33,14 @@ public class NormalStageEnemy : MonoBehaviour
     const float firstXPositionLastStage = 0f;
     const float firstMoveTimeLastStage = 0.7f;
     const float waitTimeLastStage = 1f;
-    
 
-    private void Start()
-    {
-        this.transform.position = new Vector2(firstXPosition,firstYPosition);
-    }
 
     ///<summary>
     ///最初の敵の動き   
     ///</summary>
     public void MoveFirstNormalStageEnemy()
     {
+        this.transform.position = new Vector2(firstXPosition, firstYPosition);
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         InvokeRepeating(nameof(AppearFirstBullet),waitTime,firstBulletInterval);
     }
@@ -53,6 +50,7 @@ public class NormalStageEnemy : MonoBehaviour
     ///</summary>
     public void MoveSecondNormalStageEnemy()
     {
+        this.transform.position = new Vector2(firstXPosition, firstYPosition);
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         InvokeRepeating(nameof(AppearSecondBullet),waitTime,secondBulletInterval);
     }
@@ -60,17 +58,18 @@ public class NormalStageEnemy : MonoBehaviour
     ///<summary>
     ///最後の敵の動き
     ///</summary>
-    public IEnumerator MoveLastNormalStageEnemy()
+    public async void MoveLastNormalStageEnemy()
     {
+        this.transform.position = new Vector2(firstXPosition, firstYPosition);
         this.transform.DOMove(new Vector2(firstXPositionLastStage,firstYPosition),firstMoveTimeLastStage);
         Invoke(nameof(AppearThirdFirstBullet),waitTime);
-        yield return new WaitForSeconds(waitTimeLastStage);
+        await Task.Delay((int)(waitTimeLastStage * 1000));
         this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),firstMoveTimeLastStage);
-        yield return new WaitForSeconds(waitTime);
+        await Task.Delay((int)(waitTime * 1000));
         this.transform.DOMove(new Vector2(limitRightMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
         float numberTime = 0f;
         float maxNumberTime = 28f;
-        while (numberTime < maxNumberTime)
+        while (numberTime < maxNumberTime && Time.timeScale != 0f )
         {
             if((numberTime == 4) || (numberTime == 16) || (numberTime == 24))
             {
@@ -80,7 +79,7 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(lastBulletInteryall);
+            await Task.Delay((int)(lastBulletInteryall * 1000));
             if((numberTime == 2) || (numberTime == 10) || (numberTime == 27))
             {
                 AppearThirdSecondBullet();
@@ -90,8 +89,8 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(lastBulletInteryall);
-            if((numberTime == 6) || (numberTime == 12) || (numberTime == 15) || (numberTime == 26))
+            await Task.Delay((int)(lastBulletInteryall * 1000));
+            if ((numberTime == 6) || (numberTime == 12) || (numberTime == 15) || (numberTime == 26))
             {
                 AppearThirdSecondBullet();
             }else if((numberTime == 0) || (numberTime == 17)){
@@ -100,7 +99,7 @@ public class NormalStageEnemy : MonoBehaviour
             }else{
                 AppearFirstBullet();
             }
-            yield return new WaitForSeconds(lastBulletInteryall);
+            await Task.Delay((int)(lastBulletInteryall * 1000));
             numberTime++;
         }
     }
