@@ -27,11 +27,6 @@ public class PlayerCollision : MonoBehaviour
 
             DOTween.KillAll();
 
-            //foreach (GameObject gamePlayObject in gameObjects)
-            //{
-            //    Destroy(gamePlayObject);
-            //}
-
             gameOverText.text = "Game Over";
 
             foreach (GameObject gameOverObject in gameOverObjects)

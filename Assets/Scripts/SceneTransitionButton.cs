@@ -28,7 +28,11 @@ public class SceneTransitionButton : MonoBehaviour
     {
         Time.timeScale = 1f;
         transform.DOScale(1.1f,0.5f).SetEase(Ease.OutElastic)
-        .OnComplete(() => transform.DOScale(1f,0.5f)).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
+        .OnComplete(() =>
+        {
+            Utils.DestroyGameObjectsWithTag("Bullet");
+            transform.DOScale(1f, 0.5f);
+        }).OnComplete(() => SceneManager.LoadScene($"{scene}"));    
     }
     
 }
