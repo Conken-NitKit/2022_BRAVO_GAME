@@ -8,7 +8,7 @@ public class TweetButton : MonoBehaviour
     public void PushTweetButton()
     {
         //string esctext = UnityWebRequest.EscapeURL($"あなたのスコアは{scoreManager.totalScore}mです！\n\n");
-        string linkUrl = UnityWebRequest.EscapeURL("https://unityroom.com/games/typincrease \n");
+        string linkUrl = UnityWebRequest.EscapeURL("https://unityroom.com/games/kisei \n");
         string tag = UnityWebRequest.EscapeURL("ミンクリース");
         var url = "https://twitter.com/intent/tweet?"
             //+ "text=" + esctext
