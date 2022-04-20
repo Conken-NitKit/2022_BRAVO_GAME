@@ -25,6 +25,9 @@ public class TimeManager : MonoBehaviour
     private GameObject titleButton;
 
     [SerializeField]
+    private GameObject tweetButton;
+
+    [SerializeField]
     private ResultScoreText scoreText;
 
     private void Start()
@@ -38,7 +41,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     public async void CountDownTime()
     {
-        limitSeconds = 30;
+        limitSeconds = 15;
 
         transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).SetLoops(-1, LoopType.Restart).SetDelay(timeCountWaitSeconds);
 
@@ -65,6 +68,7 @@ public class TimeManager : MonoBehaviour
         if(stageIndex == maxStageIndex)
         {
             titleButton.SetActive(true);
+            tweetButton.SetActive(true);
         }
 
         Time.timeScale = 0f;
