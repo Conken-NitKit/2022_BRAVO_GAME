@@ -5,15 +5,18 @@ using UnityEngine.Networking;
 
 public class TweetButton : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerStatus playerStatus;
+
     public void PushTweetButton()
     {
-        //string esctext = UnityWebRequest.EscapeURL($"あなたのスコアは{scoreManager.totalScore}mです！\n\n");
+        string esctext = UnityWebRequest.EscapeURL($"カスった回数は{playerStatus.playerGraze}回でした！\n\n");
         string linkUrl = UnityWebRequest.EscapeURL("https://unityroom.com/games/kisei \n");
-        string tag = UnityWebRequest.EscapeURL("ミンクリース");
+        string tag = UnityWebRequest.EscapeURL("体内厨");
         var url = "https://twitter.com/intent/tweet?"
-            //+ "text=" + esctext
-            + "&url=" + linkUrl
-            + "&hashtags=" + tag;
+            + "text=" + esctext
+            + "&hashtags=" + tag
+            + "&url=" + linkUrl;
         Application.OpenURL(url);
     }
 }
