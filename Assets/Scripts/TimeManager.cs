@@ -39,38 +39,41 @@ public class TimeManager : MonoBehaviour
     /// <summary>
     /// 制限時間を減らしていくメソッド
     /// </summary>
-    public async void CountDownTime()
+    public void CountDownTime()
     {
-        limitSeconds = 15;
+        limitSeconds = 30;
 
-        transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).SetLoops(-1, LoopType.Restart).SetDelay(timeCountWaitSeconds);
-
-        while (limitSeconds >= 0 && Time.timeScale != 0f)
+        transform.DOPunchScale(new Vector2(0.1f,0.1f),timeCountWaitSeconds).OnStepComplete(() =>
         {
             limitSeconds -= timeCountWaitSeconds;
             timerText.text = "たいむ: " + limitSeconds.ToString("f2");
 
-            await Task.Delay((int)(timeCountWaitSeconds * 1000));
-        }
+            if(limitSeconds <= 0 || Time.timeScale == 0f)
+            {
+                foreach (GameObject gamePauseUI in gamePauseUIs)
+                {
+                    gamePauseUI.SetActive(true);
+                }
 
-        stageIndex++;
+                DOTween.KillAll();
 
-        DOTween.KillAll();
-        Utils.DestroyGameObjectsWithTag("Bullet");
+                stageIndex++;
 
-        scoreText.SetResultScore();
+                Utils.DestroyGameObjectsWithTag("Bullet");
 
-        foreach (GameObject gamePauseUI in gamePauseUIs)
-        {
-            gamePauseUI.SetActive(true);
-        }
+                scoreText.SetResultScore();
 
-        if(stageIndex == maxStageIndex)
-        {
-            titleButton.SetActive(true);
-            tweetButton.SetActive(true);
-        }
 
-        Time.timeScale = 0f;
+                if (stageIndex == maxStageIndex)
+                {
+                    titleButton.SetActive(true);
+                    tweetButton.SetActive(true);
+                }
+
+                Time.timeScale = 0f;
+            }
+        })
+        .SetLoops(-1, LoopType.Restart)
+        .SetDelay(timeCountWaitSeconds);
     }
 }
