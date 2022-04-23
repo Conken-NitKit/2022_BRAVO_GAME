@@ -11,6 +11,7 @@ public class ScoreText : MonoBehaviour
 {
 
     [SerializeField]private PlayerStatus playerStatus;
+
     public Text scoreText;
 
     private void Start()

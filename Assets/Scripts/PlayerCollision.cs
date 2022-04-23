@@ -15,6 +15,9 @@ public class PlayerCollision : MonoBehaviour
     [SerializeField]
     private Text gameOverText;
 
+    [SerializeField]
+    private ResultScoreText scoreText;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Enemy"))
@@ -28,6 +31,8 @@ public class PlayerCollision : MonoBehaviour
             DOTween.KillAll();
 
             gameOverText.text = "Game Over";
+
+            scoreText.SetResultScore();
 
             foreach (GameObject gameOverObject in gameOverObjects)
             {
