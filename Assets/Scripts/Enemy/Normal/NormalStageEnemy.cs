@@ -21,9 +21,9 @@ public class NormalStageEnemy : MonoBehaviour
     [SerializeField]
     private GameObject enemyThirdThirdBullet;
 
-    const float limitLeftMovePosition = -3.5f;
+    const float limitLeftMovePosition = -4f;
     const float limitRightMovePosition = 3.5f;
-    const float firstXPosition = 3.5f;
+    const float firstXPosition = 4f;
     const float firstYPosition = 3.5f;
     const float moveTime = 1.1f;
     const float waitTime = 0.7f;
@@ -58,49 +58,12 @@ public class NormalStageEnemy : MonoBehaviour
     ///<summary>
     ///最後の敵の動き
     ///</summary>
-    public async void MoveLastNormalStageEnemy()
+    public void MoveLastNormalStageEnemy()
     {
-        this.transform.DOMove(new Vector2(firstXPositionLastStage,firstYPosition),firstMoveTimeLastStage);
-        Invoke(nameof(AppearThirdFirstBullet),waitTime);
-        await Task.Delay((int)(waitTimeLastStage * 1000));
-        this.transform.DOMove(new Vector2(limitLeftMovePosition,firstYPosition),firstMoveTimeLastStage);
-        await Task.Delay((int)(waitTime * 1000));
-        this.transform.DOMove(new Vector2(limitRightMovePosition,firstYPosition),moveTime).SetDelay(waitTime).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine);
-        float numberTime = 0f;
-        float maxNumberTime = 28f;
-        while (numberTime < maxNumberTime && Time.timeScale != 0f )
-        {
-            if((numberTime == 4) || (numberTime == 16) || (numberTime == 24))
-            {
-                AppearSecondBullet();
-            }else if(numberTime == 23){
-                AppearThirdThirdBullet();
-            }else{
-                AppearFirstBullet();
-            }
-            await Task.Delay((int)(lastBulletInteryall * 1000));
-            if((numberTime == 2) || (numberTime == 10) || (numberTime == 27))
-            {
-                AppearThirdSecondBullet();
-            }else if(numberTime == 18){
-                AppearFirstBullet();
-                AppearSecondBullet();
-            }else{
-                AppearFirstBullet();
-            }
-            await Task.Delay((int)(lastBulletInteryall * 1000));
-            if ((numberTime == 6) || (numberTime == 12) || (numberTime == 15) || (numberTime == 26))
-            {
-                AppearThirdSecondBullet();
-            }else if((numberTime == 0) || (numberTime == 17)){
-                AppearThirdFirstBullet();
-                AppearThirdThirdBullet();
-            }else{
-                AppearFirstBullet();
-            }
-            await Task.Delay((int)(lastBulletInteryall * 1000));
-            numberTime++;
-        }
+        this.transform.position = new Vector2(firstXPosition, firstYPosition);
+        this.transform.DOMove(new Vector2(limitLeftMovePosition, firstYPosition), moveTime).SetDelay(waitTime).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+
+        InvokeRepeating(nameof(AppearThirdBullet), waitTime, waitTimeLastStage);
     }
 
     ///<summary>
@@ -123,6 +86,28 @@ public class NormalStageEnemy : MonoBehaviour
             Instantiate (enemySecondBullet,transform.position,Quaternion.identity);
         }
     }
+
+    void AppearThirdBullet()
+    {
+        int fanctionNumber = 3;
+
+        int fanctionIndex = Random.Range(0, fanctionNumber);
+
+        if(fanctionIndex == 0)
+        {
+            AppearThirdFirstBullet();
+        }
+        else if(fanctionIndex == 1)
+        {
+            AppearThirdSecondBullet();
+        }
+        else if(fanctionIndex == 2)
+        {
+            AppearThirdThirdBullet();
+        }
+    }
+
+
     ///<summary>
     ///敵を中心に拡がる弾を呼び出すメソッド
     ///</summary>
