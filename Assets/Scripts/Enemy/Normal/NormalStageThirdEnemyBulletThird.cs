@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 ///<summary>
 ///普通難易度の最後の敵の弾の動きの処理３
 ///</summary>
@@ -11,8 +12,9 @@ public class NormalStageThirdEnemyBulletThird : MonoBehaviour
     [SerializeField]
     private GameObject enemyLastFirstBullet;
 
-    const float flyTime = 1f;
-    const float destroyTime = 1.1f;
+    private const float flyTime = 1f;
+    private const float destroyTime = 1.1f;
+
     ///<summary>
     ///拡がる弾を呼び出した後消える
     ///</summary>
@@ -21,6 +23,7 @@ public class NormalStageThirdEnemyBulletThird : MonoBehaviour
         Invoke(nameof(AppearLastFirstBullet),flyTime);
         Destroy(this.gameObject,destroyTime);
     }
+
     ///<summary>
     ///真下に向かって直進する
     ///</summary>
@@ -29,6 +32,7 @@ public class NormalStageThirdEnemyBulletThird : MonoBehaviour
         Vector2 force = new Vector2(0,-0.5f);
         rigitBody.AddForce(force);
     }
+
     ///<summary>
     ///拡がる弾を呼び出す
     ///</summary>

@@ -17,13 +17,13 @@ public class NormalStageEnemy : MonoBehaviour
     [SerializeField]
     private GameObject[] enemyThirdBullets;
 
-    const float limitLeftMovePosition = -4f;
-    const float firstXPosition = 4f;
-    const float firstYPosition = 3.5f;
-    const float moveTime = 1.1f;
-    const float firstBulletInterval = 0.16f;
-    const float secondBulletInterval = 0.6f;
-    const float waitTimeThirdStage = 2f;
+    private const float limitLeftMovePosition = -4f;
+    private const float firstXPosition = 4f;
+    private const float firstYPosition = 3.5f;
+    private const float moveTime = 1.1f;
+    private const float firstBulletInterval = 0.16f;
+    private const float secondBulletInterval = 0.6f;
+    private const float waitTimeThirdStage = 2f;
 
 
     ///<summary>
