@@ -926,7 +926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550867666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -946,9 +946,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyFirstBullet: {fileID: 7629056669224755441, guid: 891f3f783f3834a4ab7ff14df0987daa, type: 3}
   enemySecondBullet: {fileID: 1587117771140887933, guid: 776906b1bafea2c47b2353e1ea196472, type: 3}
-  enemyThirdFirstBullet: {fileID: 821127905224520566, guid: 7c5f5afef99c39144a35b729a293964c, type: 3}
-  enemyThirdSecondBullet: {fileID: 8204627745853350859, guid: 7efd1fc34064491409d164547a3b3431, type: 3}
-  enemyThirdThirdBullet: {fileID: 2457861183391224147, guid: 4ecf0d50fed131a438ca1d7ca6f3632d, type: 3}
+  enemyThirdBullets:
+  - {fileID: 821127905224520566, guid: 7c5f5afef99c39144a35b729a293964c, type: 3}
+  - {fileID: 8204627745853350859, guid: 7efd1fc34064491409d164547a3b3431, type: 3}
+  - {fileID: 2457861183391224147, guid: 4ecf0d50fed131a438ca1d7ca6f3632d, type: 3}
 --- !u!1 &716525141
 GameObject:
   m_ObjectHideFlags: 0
