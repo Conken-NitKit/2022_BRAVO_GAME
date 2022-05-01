@@ -70,6 +70,8 @@ public class TimeManager : MonoBehaviour
                     tweetButton.SetActive(true);
                 }
 
+                CancelInvoke();
+
                 Time.timeScale = 0f;
             }
         })

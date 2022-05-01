@@ -16,6 +16,7 @@ namespace EnemyMove
         [SerializeField] private GameObject homingBulletFirst;
         [SerializeField] private GameObject homingBulletSecond;
         [SerializeField] private GameObject homingBulletThird;
+
         private Vector3[] pathSecond = 
         {
             new Vector3(0f,4f,0f),

@@ -30,6 +30,8 @@ public class PlayerCollision : MonoBehaviour
 
             DOTween.KillAll();
 
+            CancelInvoke();
+
             gameOverText.text = "Game Over";
 
             scoreText.SetResultScore();

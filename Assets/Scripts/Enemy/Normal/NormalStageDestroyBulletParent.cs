@@ -8,9 +8,9 @@ using UnityEngine;
 public class NormalStageDestroyBulletParent : MonoBehaviour
 {
     const float destroyTime = 7.2f;
+
     void Start()
     {
         Destroy(this.gameObject,destroyTime);
     }
-
 }
