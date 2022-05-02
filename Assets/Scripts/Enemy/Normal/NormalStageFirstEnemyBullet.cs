@@ -8,12 +8,12 @@ public class NormalStageFirstEnemyBullet : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody2D rigitBody;
+
     ///<summary>
     ///真下に向かって直進する
     ///</summary>
     void Update()
     {
-        Vector2 force = new Vector2(0,-0.5f);
-        rigitBody.AddForce(force);
+        rigitBody.AddForce(new Vector2(0, -0.5f));
     }
 }
