@@ -13,7 +13,6 @@ namespace HomingBullet
         [SerializeField] float lifeTime = 10f;
         [SerializeField] float speed = 2.5f;
 
-        // Start is called before the first frame update
         void Start()
         {
             /// <summary>
@@ -22,17 +21,20 @@ namespace HomingBullet
             Destroy(this.gameObject, lifeTime);
         }
 
-        // Update is called once per frame
         void Update()
         {
             Homing();
         }
+
         /// <summary>
         /// 追尾弾の動き
         /// </summary>
         void Homing()
         {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, Time.deltaTime*speed);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
+                                                                GameObject.FindGameObjectWithTag("Player").transform.position,
+                                                                Time.deltaTime*speed
+                                                                );
         }
     }
 }
