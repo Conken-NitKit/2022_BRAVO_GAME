@@ -18,7 +18,6 @@ public class NormalStageThirdEnemyBulletFirst : MonoBehaviour
     ///</summary>
     void Update()
     {
-        Vector2 force = new Vector2(xMoveValue,yMoveValue);
-        rigitBody.AddForce(force);
+        rigitBody.AddForce(new Vector2(xMoveValue, yMoveValue));
     }
 }

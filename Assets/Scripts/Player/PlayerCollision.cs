@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
+/// <summary>
+/// プレイヤーの衝突判定のクラス
+/// </summary>
 public class PlayerCollision : MonoBehaviour
 {
     [SerializeField]
