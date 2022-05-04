@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+/// <summary>
+/// 次へボタンを押した時の処理
+/// </summary>
 public class NextStageButton : MonoBehaviour
 {
     [SerializeField]
@@ -20,6 +23,9 @@ public class NextStageButton : MonoBehaviour
 
     private int moveEventIndex = 0;
 
+    /// <summary>
+    /// 次へ行くボタンを押した時の動作
+    /// </summary>
     public void OnClickedNextStageButton()
     {
         Time.timeScale = 1f;

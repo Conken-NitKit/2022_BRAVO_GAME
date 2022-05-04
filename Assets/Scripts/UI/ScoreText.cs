@@ -21,7 +21,10 @@ public class ScoreText : MonoBehaviour
         defaultScale = this.transform.localScale;
         SetScore(); 
     }
-    
+
+    /// <summary>
+    /// スコアを設定するメソッド
+    /// </summary>
     public void SetScore()
     {
         scoreText.text = $"ぐれいず : {playerStatus.playerGraze}";

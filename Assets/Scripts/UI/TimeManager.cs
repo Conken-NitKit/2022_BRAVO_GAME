@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
-using System.Threading.Tasks;
 
+/// <summary>
+/// 時間に関するクラス
+/// </summary>
 public class TimeManager : MonoBehaviour
 {
     public float limitSeconds { get; private set; }
